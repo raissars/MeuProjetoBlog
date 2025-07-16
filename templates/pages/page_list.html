@@ -1,0 +1,7 @@
+<h1>Lista de Páginas</h1>
+<ul>
+    {% for page in object_list %}
+        <li><a href="{% url 'page-detail' page.pk %}">{{ page.titulo }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'page-create' %}">Criar nova página</a>

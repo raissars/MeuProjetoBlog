@@ -1,0 +1,10 @@
+<h1>{{ object.titulo }}</h1>
+<h2>{{ object.subtitulo }}</h2>
+<p>{{ object.conteudo|safe }}</p>
+<p>Autor: {{ object.autor }}</p>
+<p>Data: {{ object.data_publicacao }}</p>
+<img src="{{ object.imagem.url }}" alt="Imagem">
+
+<a href="{% url 'page-update' object.pk %}">Editar</a> |
+<a href="{% url 'page-delete' object.pk %}">Deletar</a> |
+<a href="{% url 'page-list' %}">Voltar à lista</a>
