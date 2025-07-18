@@ -4,22 +4,20 @@ import django_heroku
 import dj_database_url
 from decouple import config
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
+# Segurança
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-g7b8_if))tu%q-+te00hc1c_7u@*t2qjb#gojra9_*6-t!oiz^')
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-DEBUG = config('DEBUG', default=True, cast=bool)
+ALLOWED_HOSTS = [
+    'meuportfolio-raissaraiana-c76246ad418e.herokuapp.com',
+    'localhost',
+    '127.0.0.1'
+]
 
-ALLOWED_HOSTS = ['meuportfolio-raissaraiana-c76246ad418e.herokuapp.com', 'localhost', '127.0.0.1']
-
-
-# Application definition
-
+# Aplicações instaladas
 INSTALLED_APPS = [
-    # apps do Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -27,17 +25,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # apps de terceiros
-    'ckeditor',  # CKEditor instalado
-
-    # seu app
+    'ckeditor',
     'pages',
 ]
 
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Middleware do Whitenoise
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,6 +49,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -65,13 +60,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'meuprojetoblog.wsgi.application'
 
-
+# Banco de Dados
 DATABASES = {
     'default': dj_database_url.config(
         default=f'sqlite:///{BASE_DIR / "db.sqlite3"}'
     )
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -80,24 +74,20 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-
 LANGUAGE_CODE = 'pt-br'
 TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = True
 USE_TZ = True
 
-
+# Arquivos estáticos
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-# Configuração do Whitenoise para servir arquivos estáticos
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-# Configuração opcional do CKEditor
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
@@ -106,6 +96,6 @@ CKEDITOR_CONFIGS = {
     },
 }
 
+# Ativa as configurações automáticas para o Heroku
+django_heroku.settings(locals()) # django_heroku.settings(locals())
 
-# Configuração do Heroku
-django_heroku.settings(locals())
