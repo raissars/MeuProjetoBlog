@@ -1,0 +1,22 @@
+# Ignore o ambiente virtual
+venv/
+env/
+
+# Ignore arquivos de banco de dados
+*.sqlite3
+
+# Ignore configurações locais
+.env
+
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Pastas do Django
+staticfiles/
+media/
+
+# Configurações do VSCode
+.vscode/
