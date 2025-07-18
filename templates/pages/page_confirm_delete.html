@@ -1,8 +1,0 @@
-<h1>Confirmação de Exclusão</h1>
-<p>Você tem certeza que deseja excluir "{{ object.titulo }}"?</p>
-
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Confirmar</button>
-</form>
-<a href="{% url 'page-list' %}">Cancelar</a>

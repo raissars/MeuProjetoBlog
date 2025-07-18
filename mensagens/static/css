@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 20px;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #212529;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.messages {
+    list-style: none;
+    padding: 10px;
+}
+
+.messages .success {
+    color: green;
+    font-weight: bold;
+}
+
+.messages .error {
+    color: red;
+    font-weight: bold;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+main {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}

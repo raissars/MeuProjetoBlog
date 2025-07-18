@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.messages {
+    list-style: none;
+    padding: 10px;
+}
+
+.messages .success {
+    color: green;
+}
+
+.messages .error {
+    color: red;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Botão do LinkedIn */
+.linkedin-button {
+    display: inline-block;
+    background-color: #0077b5;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.linkedin-button:hover {
+    background-color: #005582;
+}

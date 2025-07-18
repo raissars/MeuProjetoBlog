@@ -1,7 +1,7 @@
 from django.contrib import admin
-from django.urls import path, include  # inclua o include
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pages/', include('pages.urls')),  # isso conecta as URLs do app pages
+    path('', include('pages.urls')),  # agora a raiz aponta para o app pages
 ]

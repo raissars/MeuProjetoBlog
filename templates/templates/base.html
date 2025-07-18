@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Meu Projeto Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>Raissa Raiana | Meu Portfólio</h1>
+    <h2>Bem-vindo ao meu portfólio profissional</h2>
+</header>
+
+<nav>
+    <a href="{% url 'page-list' %}">Início</a>
+    <a href="{% url 'page-create' %}">Criar Página</a>
+    <a href="/admin/">Admin</a>
+    <a href="{% url 'about' %}">Sobre</a>
+</nav>
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>© 2025 Raissa Raiana | Meu Portfólio</p>
+    <a href="https://www.linkedin.com/in/raissaraiana/" class="linkedin-button" target="_blank">Me siga no LinkedIn</a>
+</footer>
+
+</body>
+</html>
